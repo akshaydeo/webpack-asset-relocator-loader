@@ -343,7 +343,6 @@ function injectPathHook(compilation, outputAssetBase) {
       }
       const change = process.env.NODE_ENV === "production" ? "/chunks" : "";
       const chunkPath = relBase + change + '/' + assetBase(outputAssetBase);
-      console.log(process.env.NODE_ENV, chunkPath);
       return `${source}\nif (typeof __webpack_require__ !== 'undefined') __webpack_require__.ab = ${esm ? "new URL('.', import.meta.url).pathname.slice(import.meta.url.match(/^file:\\/\\/\\/\\w:/) ? 1 : 0, -1)" : '__dirname'} + ${JSON.stringify(chunkPath)};`;
     });
   }
