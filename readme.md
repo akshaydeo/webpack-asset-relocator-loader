@@ -1,3 +1,7 @@
+# Changes from base
+
+- This fork contains path fix for nextjs.
+
 # Asset Relocator Loader for Webpack
 
 [![Build Status](https://circleci.com/gh/vercel/webpack-asset-relocator-loader.svg?&style=shield)](https://circleci.com/gh/vercel/workflows/webpack-asset-relocator-loader)

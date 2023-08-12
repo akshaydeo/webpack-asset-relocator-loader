@@ -1,7 +1,7 @@
 {
   "name": "webpack-asset-relocator-loader",
   "description": "Asset relocation loader used in ncc for performing Node.js builds while emitting and relocating any asset references.",
-  "version": "1.7.3-path-fix",
+  "version": "1.7.4-path-fix",
   "repository": "akshaydeo/webpack-asset-relocator-loader",
   "license": "MIT",  
   "main": "./dist/index.js",
