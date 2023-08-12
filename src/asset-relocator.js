@@ -339,7 +339,8 @@ function injectPathHook (compilation, outputAssetBase) {
       if (chunk.name) {
         relBase = path.relative(path.dirname(chunk.name), '.').replace(/\\/g, '/');
         if (relBase.length)
-          relBase = '/' + relBase;
+          if(process.env.NODE_ENV === "production") { relBase = '/' + relBase + '/chunks'; }
+          else { relBase = '/' + relBase; }
       }
       return `${source}\nif (typeof __webpack_require__ !== 'undefined') __webpack_require__.ab = ${esm ? "new URL('.', import.meta.url).pathname.slice(import.meta.url.match(/^file:\\/\\/\\/\\w:/) ? 1 : 0, -1)" : '__dirname'} + ${JSON.stringify(relBase + '/' + assetBase(outputAssetBase))};`;
     });
